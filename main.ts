@@ -1,5 +1,8 @@
 import { serveFile } from "jsr:@std/http/file-server";
 
 Deno.serve((req: Request) => {
-    return serveFile(req, "./index.html");
+  if (req.url.endsWith("/sonja.jpeg")) {
+    return serveFile(req, "./static/sonja.jpeg");
+  }
+  return serveFile(req, "./index.html");
 });

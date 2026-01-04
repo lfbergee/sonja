@@ -18,21 +18,133 @@
             type="font/woff2"
             crossorigin
         />
-        <link
-            rel="preload"
-            href="https://demo-styles.deno.deno.net/fonts/Recursive_Variable.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin
-        />
-        <link
-            rel="stylesheet"
-            href="https://demo-styles.deno.deno.net/styles.css"
-        />
+
         <style>
+            @font-face {
+                font-family: Moranga;
+                font-style: normal;
+                font-weight: normal;
+                font-display: swap;
+                src: url("https://demo-styles.deno.deno.net/fonts/Moranga-Regular.woff2")
+                    format("woff2");
+            }
+            @font-face {
+                font-family: Moranga;
+                font-style: normal;
+                font-weight: bold;
+                font-display: swap;
+                src: url("https://demo-styles.deno.deno.net/fonts/Moranga-Medium.woff2")
+                    format("woff2");
+            }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+            html,
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            p,
+            figure,
+            blockquote,
+            dl,
+            dd,
+            ul,
+            ol,
+            pre,
+            code {
+                margin: 0;
+            }
+            :where(p, h1, h2, h3, h4, h5, h6) {
+                overflow-wrap: break-word;
+            }
+            :where(ul, ol) {
+                padding-inline-start: 1em;
+            }
+            :where(ul[role="list"], ol[role="list"], ul[class], ol[class]) {
+                list-style: none;
+                padding-inline-start: 0;
+            }
+            @media (prefers-reduced-motion: no-preference) {
+                html:focus-within {
+                    scroll-behavior: smooth;
+                }
+            }
+            html {
+                -moz-text-size-adjust: none;
+                -webkit-text-size-adjust: none;
+                text-size-adjust: none;
+            }
+            body {
+                line-height: 1.5;
+                min-height: 100vh;
+            }
+            a {
+                color: currentcolor;
+            }
+            a:not([class]) {
+                text-decoration-skip-ink: auto;
+            }
+            picture,
+            img,
+            video,
+            iframe,
+            object {
+                display: block;
+                max-inline-size: 100%;
+                block-size: auto;
+            }
+            input,
+            button,
+            textarea,
+            select {
+                font: inherit;
+            }
+            body {
+                background-color: #fff;
+                background: radial-gradient(
+                    ellipse at top left,
+                    #ffb6c1 0%,
+                    #e0b0d0 30%,
+                    #c8a0c0 60%,
+                    #b090b0 90%
+                );
+            }
             img {
                 display: inline-block;
                 vertical-align: middle;
+                border-radius: 12px;
+            }
+            section {
+                display: grid;
+                min-width: 100vw;
+                min-height: 100vh;
+                place-items: center;
+                font-family: Moranga, "Georgia Pro", Georgia, serif;
+            }
+            div {
+                place-items: center;
+                display: grid;
+                gap: 1.75rem;
+                font-size: 1.25rem;
+                max-width: 45ch;
+                border-radius: 12px;
+                background: #ffd1dc;
+                padding: 1rem;
+                text-align: center;
+                box-shadow: 0 0 0 10px #ff69b4;
+            }
+            h1 {
+                text-align: center;
+            }
+            time {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: center;
             }
         </style>
     </head>
@@ -40,22 +152,25 @@
     <body>
         <main>
             <section>
-                <img src="/sonja.jpeg" alt="sonja" />
-                <h1>
-                    <p>Navnefest for Sonja</p>
-                </h1>
-                <p>
-                    Vi ønsker å feire Sonja med en navnefest på Tonheim
-                    Folkehøyskole
-                </p>
+                <div>
+                    <img src="/sonja.jpeg" alt="sonja" />
+                    <h1>
+                        <p>Navnefest for Sonja</p>
+                    </h1>
 
-                <p>29. februar, 13:00</p>
-                <p>Det blir servert lunsj og kaker</p>
-                <p>
-                    Gi beskjed til Monica (40 24 34 62) eller Leiv Fredrik (452
-                    41 510) innen 24. januar med hvor mange som kommer og
-                    evntuelle allergier
-                </p>
+                    <p>
+                        Vi ønsker å feire Sonja med en navnefest på
+                        Tonheim&nbsp;Folkehøyskole
+                    </p>
+
+                    <time>28. februar, 13:00</time>
+                    <p>Det blir servert lunsj og kaker</p>
+                    <p>
+                        Gi beskjed til Monica (40&nbsp;24&nbsp;34&nbsp;62) eller
+                        Leiv&nbsp;Fredrik (452&nbsp;41&nbsp;510) innen 24.
+                        januar med hvor mange som kommer og evntuelle allergier
+                    </p>
+                </div>
             </section>
         </main>
     </body>
